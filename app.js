@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const path = require('path');
-const notFoundHandler = require('./middleware/common/errorHandler');
+const {notFoundHandler, errorHandler} = require('./middleware/common/errorHandler');
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -25,11 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // parse cookies
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-
 // 404 Not found handler
 app.use(notFoundHandler);
 
+// default error handler
+app.use(errorHandler);
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log('Server is running on http://localhost:3000');
+  console.log('Server is running on http://localhost:' + (process.env.PORT || 3000));
 });
