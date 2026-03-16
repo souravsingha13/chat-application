@@ -1,0 +1,26 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "A chat application to chat with office colleague",
+  "license": "ISC",
+  "author": "Sourav Singha",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=development&& nodemon app.js",
+    "production": "set NODE_ENV=production&& node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "http-errors": "^2.0.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.0",
+    "multer": "^2.1.1"
+  }
+}

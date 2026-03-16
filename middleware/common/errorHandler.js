@@ -1,0 +1,6 @@
+// 404 Not found handler
+function notFoundHandler(req, res, next) {
+    res.status(404).json({ error: 'Not Found' });
+}
+
+module.exports = notFoundHandler;
